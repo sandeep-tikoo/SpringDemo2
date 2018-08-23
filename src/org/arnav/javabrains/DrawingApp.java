@@ -11,14 +11,15 @@ public class DrawingApp {
 //		Triangle triangle = new Triangle();
 //		BeanFactory factory = new XmlBeanFactory(new FileSystemResource("spring.xml"));
 //		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+
+//		DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+//		BeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+//		reader.loadBeanDefinitions(new FileSystemResource("Spring.xml"));
 		
-//	DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
-//	BeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
-//	reader.loadBeanDefinitions(new FileSystemResource("Spring.xml"));
-	
-	//initlization of Spring Container(ApplicationContext) by the beans which are in the XML
-//	ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-	AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml"); //Abstract only when u have a main method, not in the case of web applications 
+		//initlization of Spring Container(ApplicationContext) by the beans which are in the XML
+//		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+	//Abstract only when u have a main method, not in the case of web applications
+	AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml"); 
 	context.registerShutdownHook();
 	Shape shape = (Shape) context.getBean("circle");
 	
